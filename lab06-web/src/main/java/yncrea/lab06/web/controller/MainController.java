@@ -3,6 +3,7 @@ package yncrea.lab06.web.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import yncrea.lab06.core.entity.Book;
+import yncrea.lab06.core.service.BookService;
 import yncrea.lab06.web.dto.BookDTO;
 
 import javax.inject.Inject;

@@ -21,14 +21,6 @@ public class BookService {
     public BookService() {
     }
 
-    public void save(final Book book) {
-        bookDAO.save(book);
-    }
-
-    public void deleteById(long id) {
-        bookDAO.deleteById(id);
-    }
-
     public Book getBookById(long id) {
         return bookDAO.getOneWithAuthorsAndTagsAndReviews(id);
     }
