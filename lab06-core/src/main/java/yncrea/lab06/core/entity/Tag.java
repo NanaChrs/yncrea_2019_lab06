@@ -19,7 +19,6 @@ public class Tag implements Comparable<Tag> {
     @ManyToMany(mappedBy = "tags")
     private List<Book> books;
 
-
     @Override
     public int compareTo(final Tag o) {
         return name.compareTo(o.name);
