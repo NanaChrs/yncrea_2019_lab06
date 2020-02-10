@@ -20,9 +20,6 @@ public class BookService {
         this.bookDAO = bookDAO;
     }
 
-    public BookService() {
-    }
-
     public Book getBookById(long id) {
         return bookDAO.getOneWithAuthorsAndTagsAndReviews(id);
     }
