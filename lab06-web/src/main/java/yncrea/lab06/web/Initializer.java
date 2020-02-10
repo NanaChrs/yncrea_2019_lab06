@@ -2,6 +2,9 @@ package yncrea.lab06.web;
 
 import org.apache.cxf.transport.servlet.CXFServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import yncrea.lab06.core.config.AppConfig;
+import yncrea.lab06.core.config.DBConfig;
+import yncrea.lab06.web.config.WSConfig;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -22,13 +25,13 @@ public class Initializer extends AbstractAnnotationConfigDispatcherServletInitia
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] {  };
+        return new Class<?>[] {AppConfig.class, DBConfig.class};
     }
 
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[] {};
+        return new Class<?>[] {WSConfig.class};
     }
 
 

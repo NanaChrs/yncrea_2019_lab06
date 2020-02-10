@@ -18,6 +18,7 @@ public class Book implements Comparable<Book> {
     private String title;
 
     //TODO annotate this field in order to inject the value of the enumeration as a string in the DB.
+    @Enumerated(EnumType.STRING)
     private Language language;
 
     @ManyToMany
