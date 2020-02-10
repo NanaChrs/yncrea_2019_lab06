@@ -1,5 +1,6 @@
 package yncrea.lab06.core.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import yncrea.lab06.core.dao.BookDAO;
@@ -28,8 +29,12 @@ public class BookService {
 
     public Map<Long, String> getAllBooks() {
         Map<Long,String> allBooksWithIds = new TreeMap<>();
-        final List<Book> books = bookDAO.findAll();
+        System.out.println("ok");
+
+        final List<Book> books = this.bookDAO.findAll();
+        System.out.println("books " + books.size());
         for(Book book:books){
+            System.out.println("book " + book.getTitle());
             allBooksWithIds.put(book.getId(), book.getTitle());
         }
         return allBooksWithIds;
