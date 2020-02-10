@@ -2,6 +2,7 @@ package yncrea.lab06.web.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import yncrea.lab06.core.entity.Book;
 import yncrea.lab06.core.service.BookService;
 import yncrea.lab06.web.dto.BookDTO;
@@ -21,7 +22,7 @@ public class BookController implements RestController {
 
     private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
-    @Inject
+    @Autowired
     private BookService bookService;
 
     @GET
