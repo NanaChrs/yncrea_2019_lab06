@@ -3,6 +3,9 @@ package yncrea.lab06.web.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import yncrea.lab06.core.entity.Book;
+import yncrea.lab06.core.entity.Review;
+import yncrea.lab06.core.service.BookService;
+import yncrea.lab06.core.service.ReviewService;
 import yncrea.lab06.web.dto.BookDTO;
 
 import javax.inject.Inject;
@@ -16,12 +19,15 @@ import java.util.Map;
 @Path("/api")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class MainController {
+public class MainController implements RestController {
 
     private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
     @Inject
     private BookService bookService;
+
+    @Inject
+    private ReviewService reviewService;
 
 
     @GET
@@ -45,8 +51,16 @@ public class MainController {
         return bookDTO;
     }
 
-/*    @POST
+    @POST
     @Path("/reviews")
-    public void addNewReview(Review)*/
+    public void saveReview(Review review){
+        reviewService.save(review);
+    }
+
+    @DELETE
+    @Path("/reviews/{id}")
+    public void deleteReview(@PathParam("id") long id){
+        reviewService.deleteById(id);
+    }
 
 }
