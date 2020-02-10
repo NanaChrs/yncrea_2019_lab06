@@ -17,6 +17,9 @@ public class BookDTO {
 
     private List<String> tags;
 
+    public BookDTO() {
+    }
+
     private String language;
 
     private Set<Review> reviews;

@@ -42,4 +42,9 @@ public class Author implements Comparable<Author> {
             return lastname.compareTo(o.lastname);
         }
     }
+
+    @Override
+    public String toString() {
+        return firstname+ " " + lastname;
+    }
 }

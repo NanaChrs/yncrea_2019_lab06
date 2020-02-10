@@ -23,4 +23,9 @@ public class Tag implements Comparable<Tag> {
     public int compareTo(final Tag o) {
         return name.compareTo(o.name);
     }
+
+
+    public String getName() {
+        return name;
+    }
 }
