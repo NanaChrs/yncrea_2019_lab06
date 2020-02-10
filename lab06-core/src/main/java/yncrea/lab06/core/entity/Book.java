@@ -30,7 +30,11 @@ public class Book implements Comparable<Book> {
 
     private String image;
 
-    @ManyToMany(mappedBy = "books")
+    @ManyToMany
+    @JoinTable(
+            name = "book_tag",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
     private Set<Tag> tags;
 
     @OneToMany
